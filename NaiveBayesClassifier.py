@@ -1,5 +1,5 @@
+import sys
 import numpy as np
-
 import time
 
 results = {
@@ -14,9 +14,7 @@ trainingData3D = np.zeros((2,11,4))
 
 def training():
 
-    
-
-    trainingFile = open("training.txt", "r")
+    trainingFile = open(sys.argv[1], "r")
 
     for line in trainingFile:
         tmp = line.split(",")
@@ -90,7 +88,7 @@ def training():
 def testing():
     
 
-    testingFile = open("testing.txt", "r")
+    testingFile = open(sys.argv[2], "r")
     testingData = []
 
     for line in testingFile:
@@ -127,6 +125,7 @@ def testing():
 
     for entry in testingResults:
         print(entry)
+
 
 
 
