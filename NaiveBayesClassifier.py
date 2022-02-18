@@ -14,7 +14,7 @@ trainingData3D = np.zeros((2,11,4))
 
 def training():
 
-    start = time.time()
+    
 
     trainingFile = open("training.txt", "r")
 
@@ -85,11 +85,10 @@ def training():
                 else:
                     trainingData3D[i][j][k] /= results["Success"]
     
-    end = time.time()
-    print(end - start)
+    
 
 def testing():
-    start = time.time()
+    
 
     testingFile = open("testing.txt", "r")
     testingData = []
@@ -126,20 +125,10 @@ def testing():
         tmpTrue = 0.5
         tmpFalse = 0.5 
 
-    #for entry in testingResults:
-        #print(entry)
+    for entry in testingResults:
+        print(entry)
 
-    tmp2 = 0
 
-    for i in range(2011):
-        if(testingResults[i] == 1 and testingData[i][11] == "1\n"):
-            tmp2 += 1
-        elif(testingResults[i] == 0 and testingData[i][11] == "0\n"):
-            tmp2 += 1
-    print(tmp2/len(testingData))
-
-    end = time.time()
-    print(end - start)
 
 
 
