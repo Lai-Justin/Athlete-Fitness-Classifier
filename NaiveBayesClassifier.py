@@ -28,26 +28,28 @@ def training():
             results["Failure"] += 1
 
 
-    means = [[],[],[],[],[],[],[],[],[],[],[]]
+    toGetPercentiles = [[],[],[],[],[],[],[],[],[],[],[]]
 
     for entry in trainingData:
         for i in range(11):
             if(i != 1):
-                means[i].append(float(entry[i]))
+                toGetPercentiles[i].append(float(entry[i]))
 
 
 
-    percentiles.append([np.percentile(means[0], 25), np.percentile(means[0], 50), np.percentile(means[0], 75), np.percentile(means[0], 100)])
+
+
+    percentiles.append([np.percentile(toGetPercentiles[0], 25), np.percentile(toGetPercentiles[0], 50), np.percentile(toGetPercentiles[0], 75), np.percentile(toGetPercentiles[0], 100)])
     percentiles.append([0])
-    percentiles.append([np.percentile(means[2], 25), np.percentile(means[2], 50), np.percentile(means[2], 75), np.percentile(means[2], 100)])
-    percentiles.append([np.percentile(means[3], 25), np.percentile(means[3], 50), np.percentile(means[3], 75), np.percentile(means[3], 100)])
-    percentiles.append([np.percentile(means[4], 25), np.percentile(means[4], 50), np.percentile(means[4], 75), np.percentile(means[4], 100)])
-    percentiles.append([np.percentile(means[5], 25), np.percentile(means[5], 50), np.percentile(means[5], 75), np.percentile(means[5], 100)])
-    percentiles.append([np.percentile(means[6], 25), np.percentile(means[6], 50), np.percentile(means[6], 75), np.percentile(means[6], 100)])
-    percentiles.append([np.percentile(means[7], 25), np.percentile(means[7], 50), np.percentile(means[7], 75), np.percentile(means[7], 100)])
-    percentiles.append([np.percentile(means[8], 25), np.percentile(means[8], 50), np.percentile(means[8], 75), np.percentile(means[8], 100)])
-    percentiles.append([np.percentile(means[9], 25), np.percentile(means[9], 50), np.percentile(means[9], 75), np.percentile(means[9], 100)])
-    percentiles.append([np.percentile(means[10], 25), np.percentile(means[10], 50), np.percentile(means[10], 75), np.percentile(means[10], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[2], 25), np.percentile(toGetPercentiles[2], 50), np.percentile(toGetPercentiles[2], 75), np.percentile(toGetPercentiles[2], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[3], 25), np.percentile(toGetPercentiles[3], 50), np.percentile(toGetPercentiles[3], 75), np.percentile(toGetPercentiles[3], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[4], 25), np.percentile(toGetPercentiles[4], 50), np.percentile(toGetPercentiles[4], 75), np.percentile(toGetPercentiles[4], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[5], 25), np.percentile(toGetPercentiles[5], 50), np.percentile(toGetPercentiles[5], 75), np.percentile(toGetPercentiles[5], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[6], 25), np.percentile(toGetPercentiles[6], 50), np.percentile(toGetPercentiles[6], 75), np.percentile(toGetPercentiles[6], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[7], 25), np.percentile(toGetPercentiles[7], 50), np.percentile(toGetPercentiles[7], 75), np.percentile(toGetPercentiles[7], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[8], 25), np.percentile(toGetPercentiles[8], 50), np.percentile(toGetPercentiles[8], 75), np.percentile(toGetPercentiles[8], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[9], 25), np.percentile(toGetPercentiles[9], 50), np.percentile(toGetPercentiles[9], 75), np.percentile(toGetPercentiles[9], 100)])
+    percentiles.append([np.percentile(toGetPercentiles[10], 25), np.percentile(toGetPercentiles[10], 50), np.percentile(toGetPercentiles[10], 75), np.percentile(toGetPercentiles[10], 100)])
 
 
     for entry in trainingData:
@@ -125,7 +127,6 @@ def testing():
 
     for entry in testingResults:
         print(entry)
-
 
 
 
