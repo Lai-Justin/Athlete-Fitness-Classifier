@@ -125,8 +125,11 @@ def testing():
         tmpTrue = 0.5
         tmpFalse = 0.5 
 
-    for entry in testingResults:
-        print(entry)
+    res = 0
+    for i in range(len(testingResults)):
+        if testingResults[i] == int(testingData[i][11]):
+            res += 1
+    print(res / len(testingResults))
 
 
 
